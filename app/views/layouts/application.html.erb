@@ -5,12 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
 </head>
 <body>
+  <div class="container">
+    <!-- LINKS TO OTHER PAGES -->
+    <%= render "game/navbar" %>
 
-<%= yield %>
+    <!-- PLAY AND RESULTS-->
+    <%= render 'game/rps_results' %>
 
-<p> The computer played <%= @computer_play %>, you <%= @result %></p>
+    <!-- other -->
+    <%= yield %>
 
+  </div>
 </body>
 </html>
